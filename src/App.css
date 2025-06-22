@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+.notes-app-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notes-sidebar {
+  width: 25%;
+  background-image: url('../public/bg-sidepannel.png');
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  padding: 0.5%;
+  font: #fff;
+  position: relative;
+}
+
+.notes-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 36, 43, 0.751); /* dark overlay for readability */
+  z-index: 0;
+}
+
+.notes-sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-header button {
+  font-size: 1.5rem;
+  background: #3b8cb8;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-header button:hover {
+  background: #d1d1d1;
+}
+
+.notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+  color: #fff;
+  
+}
+
+.notes-list li {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.2s;
+  background: #18265b73;
+}
+
+.notes-list li.active, .notes-list li:hover {
+  background: #4c8cdf97;
+}
+
+.note-title {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: left;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #c00;
+  display: none;
+}
+
+.notes-list li:hover .delete-btn {
+  display: block;
+}
+
+.note-main {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background: transparent;
+}
+
+.note-editor {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  background-color: #07211d;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-title-input {
+  font-size: 2rem;
+  height: 6%;
+  font-weight: 600;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+  padding: 1rem 0;
+  background: #0c2520;
+  color: #ffffffe1;
+}
+
+.note-content-input {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  resize: vertical;
+  background: #07211d;
+  color: #ffffffe1;
+}
+
+.save-btn {
+  align-self: flex-end;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.save-btn:hover {
+  background: #2563eb;
+}
+
+.no-note {
+  color: #162837;
+  font-size: 3rem;
+  padding: 10%;
+  text-align: center;
+  font-weight: 600;
+  background: #07211d;
+  color: #ffffffe1;
 }
