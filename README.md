@@ -1,6 +1,7 @@
 # Notes App
 
-A simple note-taking web application built with React. This app allows users to create, edit, save, and manage their notes with a clean and intuitive interface.
+A simple note-taking web application built with React. This app allows users to create, edit, save, and manage their notes with a clean and intuitive interface.<br>
+<b>Website:<b/> https://simple-notes-app01.netlify.app/
 
 ## Features
 
@@ -8,16 +9,7 @@ A simple note-taking web application built with React. This app allows users to 
 - **Edit Notes**: Modify title and content of existing notes
 - **Delete Notes**: Remove unwanted notes with one click
 - **Auto-save**: Notes are automatically saved to localStorage
-- **Clean UI**: Modern, minimalist interface
 - **Local Storage**: All notes persist between browser sessions
-
-## Technologies Used
-
-- **React 19.1.0** - Frontend framework
-- **React DOM 19.1.0** - React rendering for web
-- **React Scripts 5.0.1** - Build tools and development server
-- **CSS3** - Styling and responsive design
-- **LocalStorage API** - Data persistence
 
 ## 📦 Installation
 
